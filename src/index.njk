@@ -7,30 +7,47 @@ txteJsModule: /assets/js/app.js
 
 <div class="bg-[darkorange]">
 
-<div class="h-[100vh] flex flex-col">
-  
-  <div class="text-center bg-white py-8">
-    <div class="aur-container-lg flex justify-between items-center">
-      <h1 class="text-5xl font-mono font-semibold">TextEase</h1>
-      <input type="text" id="textInput" size="40" placeholder="Enter text to ease (e.g., a key or password)"
-        class="rounded-sm shadow-sm focus:border-black focus:ring focus:ring-black focus:ring-opacity-50">
+  <div class="flex flex-col min-h-[100vh]">
+    
+    <header class="bg-white py-8 text-center">
+      <div class="aur-container-lg flex items-center justify-between">
+        <h1 class="font-mono font-semibold text-5xl">TextEase</h1>
+        <input type="text" id="textInput" size="40" placeholder="Enter text to ease (e.g., a key or password)"
+          class="focus:border-black focus:ring focus:ring-black focus:ring-opacity-50 rounded-sm shadow-sm">
+      </div>
+    </header>
+
+    <section id="textEase" data-font-family="mono" data-font-weight="bold"
+        class="content-center flex flex-grow flex-wrap gap-x-10 justify-center px-6 py-24 text-white">
+      <template id="easeItemTemplate">
+        <span class="cursor-default"></span>
+      </template>
+    </section>
+
+  </div>
+
+  <section class="bg-white bg-opacity-80 py-24">
+    <div id="toolbar" class="aur-container-lg">
+      <div class="flex justify-between">
+        <div id="fontFamilyButtons">
+          <button type="button" class="aur-chip font-sans" data-font-family="sans">sans</button>
+          <button type="button" class="aur-chip font-serif" data-font-family="serif">serif</button>
+          <button type="button" class="aur-chip font-mono" data-font-family="mono" data-selected="true">mono</button>
+        </div>
+
+        <div id="fontWeightButtons">
+          <button type="button" class="aur-chip" data-font-weight="thin">thin</button>
+          <button type="button" class="aur-chip" data-font-weight="extralight">extralight</button>
+          <button type="button" class="aur-chip" data-font-weight="light">light</button>
+          <button type="button" class="aur-chip" data-font-weight="normal">normal</button>
+          <button type="button" class="aur-chip" data-font-weight="medium">medium</button>
+          <button type="button" class="aur-chip" data-font-weight="semibold">semibold</button>
+          <button type="button" class="aur-chip" data-font-weight="bold" data-selected="true">bold</button>
+          <button type="button" class="aur-chip" data-font-weight="extrabold">extrabold</button>
+          <button type="button" class="aur-chip" data-font-weight="black">black</button>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div id="textEase" class="px-6 flex flex-wrap content-evenly justify-center gap-x-10 flex-grow text-white" data-font="mono">
-    <template id="easeItemTemplate">
-      <b class="cursor-default"></b>
-    </template>
-  </div>
-
-</div>
-
-<section class="bg-black bg-opacity-50 py-24">
-  <div id="toolbar" class="aur-container-lg">
-    <button type="button" class="txte-button font-sans" data-font="sans">sans</button>
-    <button type="button" class="txte-button font-serif" data-font="serif">serif</button>
-    <button type="button" class="txte-button font-mono" data-font="mono">mono</button>
-  </div>
-</section>
+  </section>
 
 </div>

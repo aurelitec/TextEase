@@ -9,6 +9,9 @@ const toolbar = document.getElementById("toolbar");
 const textEase = document.getElementById("textEase");
 const easeItemTemplate = document.getElementById("easeItemTemplate");
 
+const fontFamilyButtons = document.getElementById("fontFamilyButtons");
+const fontWeightButtons = document.getElementById("fontWeightButtons");
+
 function renderTextease(text) {
   
   textEase.replaceChildren();
@@ -24,7 +27,7 @@ function renderTextease(text) {
     }
 
     const easeItem = easeItemTemplate.content.cloneNode(true);
-    easeItem.querySelector('b').textContent = chars[index];
+    easeItem.querySelector('span').textContent = chars[index];
     easeSection.appendChild(easeItem);
   }
 
@@ -36,9 +39,18 @@ function onTextInput(event) {
   renderTextease(event.target.value);
 }
 
-function onClassButtonClick(event) {
-  console.log(event.target.dataset);
-  textEase.dataset.font = event.target.dataset.font; 
+function onFontFamilyButtonClick(event) {
+  [...fontFamilyButtons.children].forEach(child => child.dataset.selected = false);
+  const selectedButton = event.target;
+  textEase.dataset.fontFamily = selectedButton.dataset.fontFamily;
+  selectedButton.dataset.selected = true;
+}
+
+function onFontWeightButtonClick(event) {
+  [...fontWeightButtons.children].forEach(child => child.dataset.selected = false);
+  const selectedButton = event.target;
+  textEase.dataset.fontWeight = selectedButton.dataset.fontWeight;
+  selectedButton.dataset.selected = true;
 }
 
 /**
@@ -52,8 +64,11 @@ function initApp() {
   textInput.dispatchEvent(new Event('input', {bubbles:true}));
 
   // Init the click events of settings
-  toolbar.querySelectorAll('[data-font]').forEach(button => {
-    button.addEventListener('click', onClassButtonClick, false);
+  [...fontFamilyButtons.children].forEach(button => {
+    button.addEventListener('click', onFontFamilyButtonClick, false);
+  });
+  [...fontWeightButtons.children].forEach(button => {
+    button.addEventListener('click', onFontWeightButtonClick, false);
   });
 }
 
