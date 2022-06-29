@@ -1,34 +1,36 @@
 ---
-seoTitle: Textease
+seoTitle: TextEase
 seoDescription: 
 
 txteJsModule: /assets/js/app.js
 ---
 
+<div class="bg-[darkorange]">
+
 <div class="h-[100vh] flex flex-col">
   
-  <div class="text-center bg-stone-600 flex flex-col gap-2 py-4">
-    <div>
-      <input type="text" id="textInput" class="rounded-md" size="40" placeholder="Text to ease (e.g., a key or password)">
-    </div>
-    <div id="toolbar">
-      <button type="button" class="txte-button font-sans" data-font="sans">sans</button>
-      <button type="button" class="txte-button font-serif" data-font="serif">serif</button>
-      <button type="button" class="txte-button font-mono" data-font="mono">mono</button>
-
-      <button type="button" class="txte-button font-sans" data-font-size="lg">lg</button>
-      <button type="button" class="txte-button font-serif" data-font-size="xl">xl</button>
-      <button type="button" class="txte-button font-mono" data-font-size="xxl">xxl</button>
+  <div class="text-center bg-white py-8">
+    <div class="aur-container-lg flex justify-between items-center">
+      <h1 class="text-5xl font-mono font-semibold">TextEase</h1>
+      <input type="text" id="textInput" size="40" placeholder="Enter text to ease (e.g., a key or password)"
+        class="rounded-sm shadow-sm focus:border-black focus:ring focus:ring-black focus:ring-opacity-50">
     </div>
   </div>
 
-  {# <div id="textEase" class="px-6 flex flex-wrap content-evenly justify-center gap-x-10 flex-grow" data-font="mono" data-font-size="xxl"> #}
-  <div id="textEase" class="px-6 flex flex-wrap content-evenly justify-center gap-x-10 flex-grow" data-font="mono">
+  <div id="textEase" class="px-6 flex flex-wrap content-evenly justify-center gap-x-10 flex-grow text-white" data-font="mono">
     <template id="easeItemTemplate">
-      <div class="bg-stone-100 leading-normal px-1 rounded-md group-hover:bg-stone-300">
-        <b class="cursor-default"></b>
-      </div>
+      <b class="cursor-default"></b>
     </template>
   </div>
+
+</div>
+
+<section class="bg-black bg-opacity-50 py-24">
+  <div id="toolbar" class="aur-container-lg">
+    <button type="button" class="txte-button font-sans" data-font="sans">sans</button>
+    <button type="button" class="txte-button font-serif" data-font="serif">serif</button>
+    <button type="button" class="txte-button font-mono" data-font="mono">mono</button>
+  </div>
+</section>
 
 </div>

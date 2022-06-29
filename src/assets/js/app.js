@@ -19,7 +19,7 @@ function renderTextease(text) {
   for (let index = 0; index < chars.length; index++) {
     if (index % easeSectionLength == 0) {
       easeSection = document.createElement('div');
-      easeSection.className = 'group txte-ease-section';
+      easeSection.className = 'group aur-ease-section';
       textEase.append(easeSection);
     }
 
@@ -28,8 +28,7 @@ function renderTextease(text) {
     easeSection.appendChild(easeItem);
   }
 
-  // const fontSize = Math.min(100 / text.length, 30);
-  const fontSize =  Math.min(Math.max(100 / text.length, 5), 30);
+  const fontSize =  Math.min(Math.max(125 / text.length, 5), 30);
   textEase.style.fontSize = fontSize + 'vw';
 }
 
@@ -47,16 +46,14 @@ function onClassButtonClick(event) {
  */
 function initApp() {
   textInput.addEventListener('input', onTextInput, false);
+  
+  // Add dummy data on init for easier testing
+  textInput.value = '3N8BhFnw1Hf21PNjfr';
+  textInput.dispatchEvent(new Event('input', {bubbles:true}));
 
+  // Init the click events of settings
   toolbar.querySelectorAll('[data-font]').forEach(button => {
     button.addEventListener('click', onClassButtonClick, false);
-  });
-
-  toolbar.querySelectorAll('[data-font-size]').forEach(button => {
-    button.addEventListener(
-      'click', 
-      (event) => textEase.dataset.fontSize = event.target.dataset.fontSize,
-      false);
   });
 }
 

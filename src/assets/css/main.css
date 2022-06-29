@@ -6,12 +6,16 @@
 }
 
 @layer components {
-  .txte-container {
-    @apply px-6 mx-auto;
+  .aur-container {
+    @apply px-6 md:px-12 xl:px-0 container mx-auto;
   }
 
-  .txte-ease-section {
-    @apply flex gap-x-2;
+  .aur-container-lg {
+    @apply aur-container max-w-screen-lg;
+  }
+
+  .aur-ease-section {
+    @apply flex gap-x-2 border-b-8 border-b-transparent hover:border-b-current;
   }
 
   .txte-button {
@@ -28,18 +32,6 @@
 
   [data-font='mono'] {
     @apply font-mono;
-  }
-
-  #textEase[data-font-size='lg'] {
-    @apply text-5xl;
-  }
-
-  #textEase[data-font-size='xl'] {
-    @apply text-7xl;
-  }
-
-  #textEase[data-font-size='xxl'] {
-    @apply text-9xl;
   }
 
 }
