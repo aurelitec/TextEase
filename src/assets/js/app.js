@@ -27,6 +27,10 @@ function renderTextease(text) {
     easeItem.querySelector('b').textContent = chars[index];
     easeSection.appendChild(easeItem);
   }
+
+  // const fontSize = Math.min(100 / text.length, 30);
+  const fontSize =  Math.min(Math.max(100 / text.length, 5), 30);
+  textEase.style.fontSize = fontSize + 'vw';
 }
 
 function onTextInput(event) {
@@ -46,6 +50,13 @@ function initApp() {
 
   toolbar.querySelectorAll('[data-font]').forEach(button => {
     button.addEventListener('click', onClassButtonClick, false);
+  });
+
+  toolbar.querySelectorAll('[data-font-size]').forEach(button => {
+    button.addEventListener(
+      'click', 
+      (event) => textEase.dataset.fontSize = event.target.dataset.fontSize,
+      false);
   });
 }
 

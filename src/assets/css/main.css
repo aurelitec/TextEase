@@ -29,6 +29,19 @@
   [data-font='mono'] {
     @apply font-mono;
   }
+
+  #textEase[data-font-size='lg'] {
+    @apply text-5xl;
+  }
+
+  #textEase[data-font-size='xl'] {
+    @apply text-7xl;
+  }
+
+  #textEase[data-font-size='xxl'] {
+    @apply text-9xl;
+  }
+
 }
 
 @layer utilities {
