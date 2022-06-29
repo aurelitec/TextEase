@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% include "blocks/common/head.njk" %}
+</head>
+<body>
+
+  {% include "blocks/common/header.njk" %}
+
+  {{ content | safe }}
+
+  {% include "blocks/common/footer.njk" %}
+
+  <script type="module" src="{{ txteJsModule }}"></script>
+
+</body>
+</html>

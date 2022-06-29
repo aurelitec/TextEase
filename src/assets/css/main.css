@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+}
+
+@layer components {
+  .txte-container {
+    @apply px-6 mx-auto;
+  }
+
+  .txte-ease-section {
+    @apply flex gap-x-2;
+  }
+
+  .txte-button {
+    @apply rounded-md px-4 py-2 bg-black text-white;
+  }
+
+  [data-font='sans'] {
+    @apply font-sans;
+  }
+
+  [data-font='serif'] {
+    @apply font-serif;
+  }
+
+  [data-font='mono'] {
+    @apply font-mono;
+  }
+}
+
+@layer utilities {
+}
+
